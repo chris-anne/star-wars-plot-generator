@@ -1,0 +1,19 @@
+<div>
+  <h1>Your Plot Summary</h1>
+  <br />
+  <h3>{{ title }}</h3>
+  <p>{{ description }}</p>
+  <p> Characters involved:</p>
+  <ul>
+    <li *ngFor="let person of people">
+      {{ person.name }}
+    </li>
+  </ul>
+  <p> Story takes place on planet(s):</p>
+  <ul>
+    <li *ngFor="let planet of planets">
+      {{ planet.name }}
+    </li>
+  </ul>
+</div>
+<button type="button" class="btn btn-primary" routerLink="">Start again</button>

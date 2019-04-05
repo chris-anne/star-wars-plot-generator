@@ -1,0 +1,36 @@
+<h2>People</h2>
+<p>Choose at least one protagonist for your story.</p>
+
+<div class="row">
+  <div class="col-sm-8">
+    <form>
+      <div class="form-group form-inline">
+        Filter by Name: <input type="text" class="form-control ml-2" name="searchTerm" style="width:300px" [(ngModel)]="term" />
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-4">
+      <button type="button" class="btn btn-primary" (click)="savePeople()" routerLink="/planets">Next</button>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Birthyear</th>
+    <th scope="col">Homeworld</th>
+    <th scope="col">Gender</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of people | peoplefilter: term">
+    <td>{{ p.name }}</td>
+    <td>{{ p.birth_year }}</td>
+    <td>{{ p.homeworld }}</td>
+    <td>{{ p.gender }}</td>
+    <td><button type="button" class="btn btn-outline-primary" (click)="addPeople(p)">Select</button></td>
+  </tr>
+  </tbody>
+</table>

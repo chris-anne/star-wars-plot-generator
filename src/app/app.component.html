@@ -1,0 +1,30 @@
+<div id="header">
+  <h1 style="text-align: center">{{ title }}</h1>
+</div>
+
+<br />
+
+<div class="container">
+  <div class="row">
+    <div id="navigation" class="col-sm-2">
+      <ul class="nav flex-sm-column">
+        <li class="nav-item">
+          <a routerLink="/title">1. Title</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/description">2. Description</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/people">3. People</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/planets">4. Planets</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-sm-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

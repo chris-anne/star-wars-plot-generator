@@ -1,0 +1,7 @@
+<p>
+  Choose a title:
+</p>
+
+<input type="text" [(ngModel)]="title" style="width: 500px" id="title" name="title" required minlength="2">
+
+<button type="button" class="btn btn-primary ml-3" (click)="addTitle()" routerLink="/description">Next</button>

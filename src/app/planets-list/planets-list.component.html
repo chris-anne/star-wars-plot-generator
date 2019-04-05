@@ -1,0 +1,36 @@
+<h2>Planets</h2>
+<p>Choose a planet where your story will take place.</p>
+
+<div class="row">
+  <div class="col-sm-8">
+    <form>
+        <div class="form-group form-inline">
+          Filter by Name: <input type="text" class="form-control ml-2" name="searchTerm" style="width:400px" [(ngModel)]="term" />
+        </div>
+    </form>
+  </div>
+  <div class="col-sm-4">
+      <button type="button" class="btn btn-success" (click)="savePlanets()" routerLink="/plotsummary">Done</button>
+  </div>
+</div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Diameter</th>
+      <th scope="col">Gravity</th>
+      <th scope="col">Population</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of planets | planetfilter: term">
+      <td>{{ p.name }}</td>
+      <td>{{ p.diameter }}</td>
+      <td>{{ p.gravity }}</td>
+      <td>{{ p.population }}</td>
+      <td><button type="button" class="btn btn-outline-primary" (click)="addPlanet(p)">Select</button></td>
+    </tr>
+    </tbody>
+  </table>
